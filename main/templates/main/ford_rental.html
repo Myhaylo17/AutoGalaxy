@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Ford</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'neq/css/ford_style.css' %}" />
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+        .scroll-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 16px;
+            padding: 10px;
+        }
+        .card {
+            flex: 0 0 auto;
+            width: 230px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        .card img {
+            height: 150px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-body {
+            padding: 12px;
+        }
+        .btn.rent-button {
+            width: 100%;
+            margin-top: 10px;
+            background-color: #4a90e2;
+            border: none;
+            color: #fff;
+        }
+        .btn.rent-button:hover {
+            background-color: #357ab7;
+        }
+        .scroll-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            font-size: 24px;
+            background-color: rgba(74, 144, 226, 0.8);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .left-arrow {
+            left: 0;
+        }
+        .right-arrow {
+            right: 0;
+        }
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            transition: left 0.3s ease;
+            z-index: 100;
+        }
+        .sidebar.open {
+            left: 0;
+        }
+        .sidebar a {
+            display: block;
+            color: #ddd;
+            padding: 10px 0;
+            text-decoration: none;
+        }
+        .sidebar a:hover {
+            color: white;
+        }
+        .sidebar-toggle {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 101;
+        }
+
+        /* Модальне вікно - темна тема */
+        .modal-content {
+            background-color: #1e1e1e;
+            color: #fff;
+            border-radius: 16px;
+        }
+        .modal-header, .modal-footer {
+            border-color: #333;
+        }
+        .form-control, .form-select {
+            background-color: #2c2c2c;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.6);
+            background-color: #2c2c2c;
+            color: #fff;
+        }
+        label {
+            color: #ddd;
+        }
+        .btn-primary {
+            background-color: #4a90e2;
+            border: none;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background-color: #357ab7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+
+    <h1 class="text-center mb-4">Ford: Power, Innovation, and Versatility</h1>
+
+    <p>Ford vehicles are built to meet every challenge, offering reliable performance,
+        advanced features, and bold designs that stand out.</p>
+    <p>Ford isn’t just a car—it’s a partner for your journey.</p>
+    <p>Discover your perfect Ford today. Book a test drive and experience its legendary quality firsthand!</p>
+
+    <button id="toggleButton" class="sidebar-toggle">☰ Information</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="{% url 'home' %}">Main page</a>
+        <a href="{% url 'bmw' %}">BMW</a>
+        <a href="{% url 'audi' %}">Audi</a>
+        <a href="{% url 'volswagen' %}">Volswagen</a>
+        <a href="{% url 'mercedes' %}">Mercedes</a>
+        <a href="{% url 'porsche' %}">Porsche</a>
+        <a href="{% url 'tesla' %}">Tesla</a>
+        <a href="#">About Us</a>
+    </div>
+
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+            <button class="scroll-arrow left-arrow" onclick="scrollLeft()">&larr;</button>
+            <button class="scroll-arrow right-arrow" onclick="scrollRight()">&rarr;</button>
+        </div>
+
+        <div class="scroll-container">
+            <!-- Приклади карток авто -->
+            <div class="card">
+                <img src="{% static 'neq/img/cars/ford/ford_kuga.jpg' %}" alt="Ford Kuga" />
+                <div class="card-body">
+                    <h5 class="card-title">Ford Kuga</h5>
+                    <p class="card-text">Luxury sedan with premium features.</p>
+                    <p class="card-text"><strong>Price:</strong> $90,000</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Ford Kuga" data-price="90000">Rent</button>
+                </div>
+            </div>
+            <!-- Додайте інші картки авто тут аналогічно -->
+            <!-- ... -->
+        </div>
+    </div>
+</div>
+
+<!-- Модальне вікно -->
+<div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="rentForm" method="post" action="{% url 'ford_rental' %}">
+        {% csrf_token %}
+        <div class="modal-header">
+          <h5 class="modal-title" id="rentModalLabel">Rent a Car</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="car_model" id="carModelInput" />
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" name="name" id="name" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" name="phone" id="phone" pattern="[\d+\-\s]+" placeholder="+380 00 000 0000" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="payment" class="form-label">Payment Method</label>
+            <select class="form-select" name="payment" id="payment" required>
+              <option value="" disabled selected>Select payment method</option>
+              <option value="cash">Cash</option>
+              <option value="card">Card</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="duration" class="form-label">Rental Duration (days)</label>
+            <input type="number" min="1" class="form-control" name="duration" id="duration" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="rental_date" class="form-label">Rental Date</label>
+            <input type="date" class="form-control" name="rental_date" id="rental_date" required />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Submit Rental</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function scrollLeft() {
+        document.querySelector('.scroll-container').scrollBy({ left: -250, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+        document.querySelector('.scroll-container').scrollBy({ left: 250, behavior: 'smooth' });
+    }
+
+    const toggleButton = document.getElementById('toggleButton');
+    const sidebar = document.getElementById('sidebar');
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.rent-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const carModel = button.getAttribute('data-car');
+            document.getElementById('carModelInput').value = carModel;
+            const modal = new bootstrap.Modal(document.getElementById('rentModal'));
+            modal.show();
+        });
+    });
+</script>
+
+</body>
+</html>

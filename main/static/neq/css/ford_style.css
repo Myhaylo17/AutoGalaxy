@@ -1,0 +1,312 @@
+body {
+    background-color: #696969
+}
+/* Градієнт для тексту */
+.text-gradient {
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Тінь для тексту */
+.text-shadow {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+
+.text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333;
+    font-style: italic;
+    text-align: justify;
+    margin: 1.2rem auto;         /* зверху/знизу 1.2rem, авто по боках */
+    padding: 0.8rem 1.2rem;
+    border-left: 5px solid #555;
+    background: #f1f1f1;
+    border-radius: 6px;
+    max-width: 1100px;            /* обмежує ширину для читабельності */
+    box-sizing: border-box;      /* враховує padding у ширину */
+}
+
+
+
+/* Контейнер для скролінгу */
+.scroll-container {
+  display: flex;
+  flex-wrap: nowrap; /* Забороняє перенесення елементів на новий рядок */
+  gap: 20px; /* Відстань між картками */
+  overflow-x: auto; /* Додає горизонтальний скрол */
+  padding: 10px;
+  scroll-behavior: smooth; /* Плавний скрол */
+  white-space: nowrap; /* Забезпечує, що елементи залишаються в одному рядку */
+}
+
+/* Кастомізація скролбару */
+.scroll-container::-webkit-scrollbar {
+  height: 8px; /* Висота горизонтального скролбару */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Колір скролбару */
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  color: #4B4B4B; /* Фон скролбару */
+}
+
+/* Стиль карток */
+.card {
+  flex: 0 0 auto; /* Фіксує ширину картки */
+  width: 300px; /* Фіксована ширина картки */
+  border: 1px solid #ddd; /* Рамка */
+  border-radius: 8px; /* Округлення */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь */
+  text-align: center;
+  background: #fff;
+}
+
+/* Зображення */
+.card img {
+  width: 100%; /* Повна ширина зображення */
+  height: 200px; /* Фіксована висота */
+  object-fit: cover; /* Обрізання зображення з пропорціями */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+}
+.card img {
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card img:hover {
+    transform: scale(1.1) translateY(-5px) translateX(5px); /* Збільшення зображення з легким підняттям та зміщенням вправо */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Тінь */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Містить простір між елементами */
+    height: 100%; /* Підганяє висоту контейнера */
+}
+
+.button-container {
+    margin-top: auto; /* Додає простір перед кнопкою, щоб вона була на нижньому краї */
+    text-align: right; /* Вирівнює кнопку праворуч */
+}
+.btn-primary {
+    background-color: #4B4B4B; /* Темно-сірий колір */
+    border-color: #4B4B4B; /* Змінює колір рамки кнопки */
+    color: #fff; /* Колір тексту */
+}
+
+.btn-primary:hover {
+    background-color: #3D3D3D; /* Трохи темніший відтінок для ефекту наведення */
+    border-color: #3D3D3D;
+}
+
+
+/* Загальні стилі */
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Кнопка для відкриття сайдбару */
+.scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Для плавного скролінгу */
+    width: 100%;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Ховаємо стандартний скролбар */
+}
+
+.arrows-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+/* Стиль для контейнера стрілок */
+.arrows-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+/* Загальні стилі для кнопок-стрілок */
+.scroll-arrow {
+    position: absolute;
+    top: 50%; /* Вирівнювання по вертикалі */
+    transform: translateY(-50%);
+    background-color: #4B4B4B; /* Темно-сірий колір */
+    color: white; /* Білий колір тексту */
+    border: none; /* Без рамок */
+    border-radius: 20px; /* Закруглені краї */
+    width: 60px; /* Ширина кнопки */
+    height: 40px; /* Висота кнопки */
+    font-size: 18px; /* Розмір тексту (стрілок) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Курсор у вигляді руки */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Анімація при наведенні */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легка тінь */
+}
+
+/* Ліва кнопка */
+.scroll-arrow.left-arrow {
+    left: -70px; /* Розміщення лівіше контейнера */
+}
+
+/* Права кнопка */
+.scroll-arrow.right-arrow {
+    right: -70px; /* Розміщення правіше контейнера */
+}
+
+/* Ефект при наведенні */
+.scroll-arrow:hover {
+    background-color: #3D3D3D; /* Темніший сірий при наведенні */
+    transform: scale(1.1); /* Легке збільшення */
+}
+
+/* Ефект при натисканні */
+.scroll-arrow:active {
+    transform: scale(0.95); /* Легке зменшення */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Інша тінь */
+}
+
+/* Фокус */
+.scroll-arrow:focus {
+    outline: none; /* Видалення стандартного фокусу */
+    box-shadow: 0 0 0 4px rgba(75, 75, 75, 0.5); /* Додає обведення при фокусі */
+}
+
+
+
+/* Сайдбар */
+
+.sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #4e342e 0%, #6d4c41 100%); /* темно-коричневий градієнт */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(135deg, #4e342e 0%, #6d4c41 100%); /* градієнт */
+            transition: right 0.3s ease, background 0.3s ease;
+            z-index: 999;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.4);
+            padding: 80px 0 20px 0;
+            backdrop-filter: blur(6px); /* додає сучасності */
+        }
+
+        /* Посилання */
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255,255,255,0.15); /* напівпрозора лінія */
+        }
+
+        /* Ефект наведення */
+        .sidebar a:hover {
+            background: rgba(255,255,255,0.1);
+            padding-left: 40px;
+            color: #ffe0b2; /* світло-бежевий для контрасту */
+        }
+
+        /* Додатково: ефект при кліку */
+        .sidebar a:active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Відкритий стан сайдбару */
+        .sidebar.open {
+            right: 0;
+        }
+
+
+.scroll-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 15px;
+    }
+
+.scroll-container .card {
+      flex: 0 0 auto;
+      width: 300px; /* ширина кожної картки */
+    }
+
+.footer {
+    width: 100%;
+    background-color: #121212;
+    color: #ffffff;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.footer .btn {
+    transition: 0.3s ease;
+}
+
+.footer .btn:hover {
+    background-color: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+/* Адаптивний дизайн */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 250px; /* Менший розмір для мобільних пристроїв */
+    }
+
+    .sidebar-toggle {
+        font-size: 14px;
+        padding: 8px 12px;
+
+    }

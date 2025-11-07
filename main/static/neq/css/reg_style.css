@@ -1,0 +1,120 @@
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* Використовуємо фоновий колір, який ви надали */
+            background-color: #3b3b3b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #e0e0e0; /* Світлий колір тексту для контрасту з темним фоном */
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        /* Стилі для картки реєстрації (адаптовано з .login-card) */
+        .registration-container {
+            max-width: 450px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Напівпрозорий білий */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Легка світла рамка */
+            backdrop-filter: blur(5px); /* Ефект розмиття "скла" */
+            border-radius: 1rem; /* Закруглені кути */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Глибока тінь */
+            color: #f8f9fa; /* Світлий текст всередині картки */
+            padding: 2.5rem; /* Внутрішній відступ */
+            box-sizing: border-box;
+        }
+
+        /* Заголовок всередині картки */
+        .registration-container h2 {
+            color: #f8f9fa; /* Світлий колір заголовка */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        /* Стилі для лейблів (адаптовано з .form-label) */
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #e0e0e0; /* Світліший колір лейбла */
+            font-weight: 500;
+        }
+
+        /* Стилі для полів вводу (адаптовано з .form-control) */
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: rgba(255, 255, 255, 0.15); /* Напівпрозорий фон поля */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Легка світла рамка поля */
+            color: #f8f9fa; /* Колір тексту, що вводиться */
+            border-radius: 6px;
+            box-sizing: border-box; /* Важливо */
+            font-size: 1rem;
+        }
+
+        /* Стиль плейсхолдера */
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: #0d6efd; /* Колір рамки при фокусі */
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            color: #f8f9fa;
+        }
+
+        /* Стилі для кнопки "Зареєструватися" (адаптовано з .btn-primary) */
+        .submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+
+            background-color: #5a3c2e; /* Той самий коричневий, що й на кнопках сайту */
+            border-color: #5a3c2e;
+            font-weight: bold; /* Зробимо текст жирнішим */
+            color: white;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .submit-btn:hover {
+            background-color: #6d4b3c; /* Трохи світліший коричневий при наведенні */
+            border-color: #6d4b3c;
+        }
+
+        /* Стилі для роздільника */
+        hr {
+            border-top: 1px solid rgba(255, 255, 255, 0.2); /* Світліший роздільник */
+            margin: 1.5rem 0; /* Відступи зверху та знизу */
+        }
+
+        /* Контейнер для нових посилань */
+        .links-container {
+            text-align: center;
+        }
+
+        /* Стилі для посилань (адаптовано) */
+        .links-container a {
+            color: #d1d1d1; /* Світло-сірий колір посилань */
+            text-decoration: none;
+            transition: color 0.2s ease; /* Плавний перехід кольору */
+            font-size: 0.9rem;
+        }
+        .links-container a:hover {
+            color: #ffffff; /* Чисто білий при наведенні */
+            text-decoration: underline;
+        }
+        .links-container p {
+            margin-bottom: 0.75rem; /* Відступ між посиланнями */
+        }
+        /* -- Кінець ваших стилів -- */

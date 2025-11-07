@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація — AutoGalaxy</title>
+    <link rel="stylesheet" href="{% static 'neq/css/reg_style.css' %}">
+</head>
+
+<body>
+    <div class="registration-container">
+        <form id="registration-form" method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <h2>Створити акаунт</h2>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="form-group">
+                <label for="email">Пошта</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="login">Логін</label>
+                <input type="text" id="login" name="login" placeholder="Ваш унікальний логін" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Мінімум 8 символів" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Зареєструватися</button>
+
+            <hr>
+            <div class="links-container">
+                <p><a href="{% url 'login' %}">Вже маєте акаунт? Увійти</a></p>
+                <p><a href="{% url 'home' %}">Повернутись на головну сторінку</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

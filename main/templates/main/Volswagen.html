@@ -1,0 +1,324 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Volkswagen</title>
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="{% static 'neq/css/volswagen_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4"> Volkswagen: Reliability, Innovation, and Style </h1>
+    <br><br>
+
+    <div class="floating-elements">
+        <i class="fas fa-car-side floating-car"></i>
+        <i class="fas fa-car-rear floating-car"></i>
+        <i class="fas fa-truck-monster floating-car"></i>
+        <i class="fas fa-truck-pickup floating-car"></i>
+    </div>
+
+    <button id="toggleButton" class="sidebar-toggle">☰ Information</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="{% url 'home' %}"><i class="fas fa-home"></i> Main page</a>
+        <a href="{% url 'bmw' %}"><i class="fas fa-car"></i> BMW</a>
+        <a href="{% url 'audi' %}"><i class="fas fa-car-side"></i> Audi</a>
+        <a href="{% url 'volswagen' %}"><i class="fas fa-car-alt"></i> Volkswagen</a>
+        <a href="{% url 'mercedes' %}"><i class="fas fa-taxi"></i> Mercedes</a>
+        <a href="{% url 'porsche' %}"><i class="fas fa-car-crash"></i> Porsche</a>
+        <a href="{% url 'ford' %}"><i class="fas fa-truck"></i> Ford</a>
+        <a href="{% url 'tesla' %}"><i class="fas fa-bolt"></i> Tesla</a>
+        <a href="{% url 'about_us' %}"><i class="fas fa-info-circle"></i> About Us</a>
+    </div>
+
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+           <button class="scroll-arrow left-arrow">&larr;</button>
+           <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_amarok.jpg' %}" class="card-img-top" alt="Volkswagen Amarok">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Amarok</h5>
+                    <p class="card-text"> Rugged, reliable, off-road pickup.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $120</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Amarok" data-price="120">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_pasat.jpg' %}" class="card-img-top" alt="Volkswagen Passat">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Passat</h5>
+                    <p class="card-text">Elegant, spacious, family sedan.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $80</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Passat" data-price="80">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_transporter.jpg' %}" class="card-img-top" alt="Volkswagen Transporter">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Transporter</h5>
+                    <p class="card-text">Versatile, practical, commercial van.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $110</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Transporter" data-price="110">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_golf.jpg' %}" class="card-img-top" alt="Volkswagen Golf">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Golf</h5>
+                    <p class="card-text"> Iconic, sporty, compact hatchback.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $70</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Golf" data-price="70">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_arteon.jpg' %}" class="card-img-top" alt="Volkswagen Arteon">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Arteon</h5>
+                    <p class="card-text">Premium, stylish, luxury fastback.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $130</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Arteon" data-price="130">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_caddy.jpg' %}" class="card-img-top" alt="Volkswagen Caddy">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Caddy</h5>
+                    <p class="card-text">Compact, functional, adaptable van.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $90</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Caddy" data-price="90">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+            <button class="scroll-arrow left-arrow">&larr;</button>
+            <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_jetta.jpg' %}" class="card-img-top" alt="Volkswagen Jetta">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Jetta</h5>
+                    <p class="card-text">Affordable, reliable, compact sedan.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $75</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Jetta" data-price="75">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_T_Roc.jpg' %}" class="card-img-top" alt="Volkswagen T-Roc">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen T-Roc</h5>
+                    <p class="card-text">Stylish, sporty, compact SUV.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $85</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen T-Roc" data-price="85">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_ID4.jpg' %}" class="card-img-top" alt="Volkswagen ID.4">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen ID.4</h5>
+                    <p class="card-text">Electric, spacious, innovative SUV.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $140</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen ID.4" data-price="140">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/Volkswagen-egolf.jpg' %}" class="card-img-top" alt="Volkswagen e-Golf">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen e-Golf</h5>
+                    <p class="card-text">Electric, eco-friendly, urban hatchback.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $95</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen e-Golf" data-price="95">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/volkswagen_Tiguan.jpg' %}" class="card-img-top" alt="Volkswagen Tiguan">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Tiguan</h5>
+                    <p class="card-text">Versatile, family-friendly, compact SUV.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $110</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Tiguan" data-price="110">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/volkswagen/Volkswagen_Touareg.jpg' %}" class="card-img-top" alt="Volkswagen Touareg">
+                <div class="card-body">
+                    <h5 class="card-title">Volkswagen Touareg</h5>
+                    <p class="card-text">Luxurious, powerful, premium SUV.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $160</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Volkswagen Touareg" data-price="160">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <p class="text">Volkswagen combines German engineering with innovative features, offering vehicles that are both practical and stylish.</p>
+    <p class="text">Volkswagen isn’t just a car—it’s a legacy of trust and innovation.</p>
+    <p class="text">Take the wheel of a Volkswagen today. Book a test drive and find your perfect ride!</p>
+    <br><br>
+</div>
+
+<div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentModalLabel">Rent a Car</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="rentForm" method="post" action="{% url 'ford_rental' %}">
+          {% csrf_token %}
+          <input type="hidden" name="car_model" id="carModelInput" />
+          <input type="hidden" name="price" id="priceInput" />
+
+          <div class="mb-3">
+            <label for="first_name" class="form-label">Your first name</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" required />
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Your last name</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" required />
+          </div>
+          <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" name="phone_number" id="phone_number" pattern="[0-9+]{10,15}" placeholder="+380XXXXXXXXX" required />
+          </div>
+          <div class="mb-3">
+            <label for="rental_date" class="form-label">Rental Date</label>
+            <input type="date" class="form-control" name="rental_date" id="rental_date" required />
+          </div>
+          <div class="mb-3">
+            <label for="rental_duration" class="form-label">Rental Duration (days)</label>
+            <input type="number" class="form-control" name="rental_duration" id="rental_duration" min="1" required />
+          </div>
+          <div class="mb-3">
+            <label for="payment_method" class="form-label">Payment Method</label>
+            <select class="form-select" name="payment_method" id="payment_method" required>
+              <option value="" disabled selected>Select payment method</option>
+              <option value="cash">Cash</option>
+              <option value="card">Card</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit Rental</button>
+        </form>
+
+        <div id="successMessage" class="alert alert-success text-center mt-3 d-none">
+            <h5>🎉 Rental Successful!</h5>
+            <p>Your rental has been recorded.</p>
+            <a href="{% url 'volswagen' %}" class="btn btn-primary">Return to Cars</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <footer class="footer text-light py-4">
+    <div class="container-fluid px-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+            <div class="mb-3 mb-md-0">
+                <h5 class="fw-bold">AutoGalaxy</h5>
+                <p class="mb-0">Your trusted car rental partner since 2018</p>
+            </div>
+
+            <div class="footer-links d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://t.me/yourusername" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/380000000000" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://maps.google.com/?q=Kyiv,+Ukraine" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-map-marker-alt"></i> Location
+                </a>
+                <a href="mailto:info@autogalaxy.com" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+380000000000" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-phone"></i> +380 00 000 00 00
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-3 border-top border-light pt-3 small">
+            © 2025 AutoGalaxy. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Логіка для сайдбару та скролів
+    const toggleButton = document.getElementById('toggleButton');
+    const sidebar = document.getElementById('sidebar');
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+    const leftArrows = document.querySelectorAll('.left-arrow');
+    const rightArrows = document.querySelectorAll('.right-arrow');
+    const scrollContainers = document.querySelectorAll('.scroll-container');
+    leftArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', () => {
+            scrollContainers[index].scrollBy({ left: -300, behavior: 'smooth' });
+        });
+    });
+    rightArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', () => {
+            scrollContainers[index].scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    });
+
+    // Логіка для модального вікна
+    document.querySelectorAll('.rent-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const carModel = this.getAttribute('data-car');
+            const price = this.getAttribute('data-price');
+
+            document.getElementById('carModelInput').value = carModel;
+            document.getElementById('priceInput').value = price;
+
+            const modal = new bootstrap.Modal(document.getElementById('rentModal'));
+            modal.show();
+        });
+    });
+
+    // Логіка для відправки форми (AJAX)
+    const rentForm = document.getElementById('rentForm');
+    rentForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(rentForm);
+
+        fetch("{% url 'ford_rental' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                rentForm.classList.add('d-none');
+                document.getElementById('successMessage').classList.remove('d-none');
+            } else {
+                alert("Error: " + (data.error || "Something went wrong."));
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+</body>
+</html>

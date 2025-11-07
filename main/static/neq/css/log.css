@@ -1,0 +1,82 @@
+body {
+            /* Використовуємо фоновий колір або градієнт, який схожий на головну сторінку */
+            background-color: #3b3b3b; /* Базовий темний колір, схожий на ваш фон */
+            /* Якщо на головній сторінці є градієнт або зображення, можна адаптувати: */
+            /* background-image: url('{% static "neq/img/your_background_image.jpg" %}'); */
+            /* background-size: cover; */
+            /* background-position: center; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #e0e0e0; /* Світлий колір тексту для контрасту з темним фоном */
+        }
+
+        /* Стилі для картки входу */
+        .login-card {
+            max-width: 450px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Напівпрозорий білий, щоб пропускати фон */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Легка світла рамка */
+            backdrop-filter: blur(5px); /* Ефект розмиття для картки */
+            border-radius: 1rem; /* Закруглені кути */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Глибока тінь */
+            color: #f8f9fa; /* Світлий текст всередині картки */
+        }
+
+        /* Заголовок всередині картки */
+        .login-card h2 {
+            color: #f8f9fa; /* Світлий колір заголовка */
+        }
+
+        /* Стилі для полів вводу */
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.15); /* Напівпрозорий фон поля */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Легка світла рамка поля */
+            color: #f8f9fa; /* Колір тексту, що вводиться */
+        }
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: #0d6efd; /* Колір рамки при фокусі */
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            color: #f8f9fa;
+        }
+
+        /* Стилі для лейблів */
+        .form-label {
+            color: #e0e0e0; /* Світліший колір лейбла */
+        }
+
+        /* Стилі для кнопки "Увійти" */
+        /* Стилі для кнопки "Увійти" (ОНОВЛЕНО) */
+        .btn-primary {
+            background-color: #5a3c2e; /* Той самий коричневий, що й на кнопках сайту */
+            border-color: #5a3c2e;
+            font-weight: bold; /* Зробимо текст жирнішим */
+        }
+        .btn-primary:hover {
+            background-color: #6d4b3c; /* Трохи світліший коричневий при наведенні */
+            border-color: #6d4b3c;
+        }
+
+        /* Стилі для посилань */
+        /* Стилі для посилань (ОНОВЛЕНО) */
+        .login-card a {
+            color: #d1d1d1; /* Світло-сірий колір посилань */
+            text-decoration: none;
+            transition: color 0.2s ease; /* Плавний перехід кольору */
+        }
+        .login-card a:hover {
+            color: #ffffff; /* Чисто білий при наведенні */
+            text-decoration: underline;
+        }
+
+        /* Якщо ви використовуєте іконки у полях, стилізуємо їх */
+        .form-label i {
+            color: #e0e0e0; /* Колір іконок у лейблах */
+        }
+
+        /* Стилі для роздільника */
+        hr {
+            border-top: 1px solid rgba(255, 255, 255, 0.2); /* Світліший роздільник */
+        }

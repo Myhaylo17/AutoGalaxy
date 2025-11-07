@@ -1,0 +1,402 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>"BMW"</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'neq/css/bmw_style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">BMW — Perfection in Every Detail</h1>
+
+    <div class="floating-elements">
+        <i class="fas fa-car-side floating-car"></i>
+        <i class="fas fa-car-rear floating-car"></i>
+        <i class="fas fa-truck-monster floating-car"></i>
+        <i class="fas fa-truck-pickup floating-car"></i>
+    </div>
+
+    <button id="toggleButton" class="sidebar-toggle">☰ Information</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="{% url 'home' %}"><i class="fas fa-home"></i> Main page</a>
+        <a href="{% url 'bmw' %}"><i class="fas fa-car"></i> BMW</a>
+        <a href="{% url 'audi' %}"><i class="fas fa-car-side"></i> Audi</a>
+        <a href="{% url 'volswagen' %}"><i class="fas fa-car-alt"></i> Volkswagen</a>
+        <a href="{% url 'mercedes' %}"><i class="fas fa-taxi"></i> Mercedes</a>
+        <a href="{% url 'porsche' %}"><i class="fas fa-car-crash"></i> Porsche</a>
+        <a href="{% url 'ford' %}"><i class="fas fa-truck"></i> Ford</a>
+        <a href="{% url 'tesla' %}"><i class="fas fa-bolt"></i> Tesla</a>
+        <a href="{% url 'about_us' %}"><i class="fas fa-info-circle"></i> About Us</a>
+    </div>
+
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+           <button class="scroll-arrow left-arrow">&larr;</button>
+           <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_x7.jpg' %}" class="card-img-top" alt="BMW X7">
+                <div class="card-body">
+                    <h5 class="card-title">BMW X7</h5>
+                    <p class="card-text">Luxury SUV with premium features.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $250</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW X7" data-price="250">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_x5.jpg' %}" class="card-img-top" alt="BMW X5">
+                <div class="card-body">
+                    <h5 class="card-title">BMW X5</h5>
+                    <p class="card-text">Dynamic sports activity vehicle.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $180</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW X5" data-price="180">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_m8.jpg' %}" class="card-img-top" alt="BMW M8">
+                <div class="card-body">
+                    <h5 class="card-title">BMW M8</h5>
+                    <p class="card-text">High-performance luxury coupe.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $350</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW M8" data-price="350">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_z4_2023.jpg' %}" class="card-img-top" alt="BMW Z4">
+                <div class="card-body">
+                    <h5 class="card-title">BMW Z4</h5>
+                    <p class="card-text">Iconic roadster with thrilling dynamics.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $220</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW Z4" data-price="220">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_i3.jpg' %}" class="card-img-top" alt="BMW i3">
+                <div class="card-body">
+                    <h5 class="card-title">BMW i3</h5>
+                    <p class="card-text">Compact electric car for the city.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $100</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW i3" data-price="100">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_i8.jpg' %}" class="card-img-top" alt="BMW i8">
+                <div class="card-body">
+                    <h5 class="card-title">BMW i8</h5>
+                    <p class="card-text">Futuristic hybrid sports car.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $300</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW i8" data-price="300">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-elements">
+        <i class="fas fa-car floating-car"></i>
+        <i class="fas fa-car-side floating-car"></i>
+        <i class="fas fa-car-alt floating-car"></i>
+        <i class="fas fa-taxi floating-car"></i>
+    </div>
+
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+            <button class="scroll-arrow left-arrow">&larr;</button>
+            <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_x6.jpg' %}" class="card-img-top" alt="BMW X6">
+                <div class="card-body">
+                    <h5 class="card-title">BMW X6</h5>
+                    <p class="card-text">Sporty and stylish coupe SUV.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $210</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW X6" data-price="210">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw-6-gt-2018.jpg' %}" class="card-img-top" alt="BMW 6 GT">
+                <div class="card-body">
+                    <h5 class="card-title">BMW 6 GT</h5>
+                    <p class="card-text">Elegant and spacious Gran Turismo.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $190</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW 6 GT" data-price="190">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/main/bmw x5.jpg' %}" class="card-img-top" alt="BMW X5">
+                <div class="card-body">
+                    <h5 class="card-title">BMW X5</h5>
+                    <p class="card-text">Reliable and efficient family car.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $180</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW X5" data-price="180">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_x3.jpg' %}" class="card-img-top" alt="BMW X3">
+                <div class="card-body">
+                    <h5 class="card-title">BMW X3</h5>
+                    <p class="card-text">Versatile and compact luxury SUV.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $150</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW X3" data-price="150">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_m7.jpg' %}" class="card-img-top" alt="BMW 7 Series">
+                <div class="card-body">
+                    <h5 class="card-title">BMW 7 Series</h5>
+                    <p class="card-text">The pinnacle of luxury sedans.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $280</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW 7 Series" data-price="280">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_m4_compettion.jpg' %}" class="card-img-top" alt="BMW M4 Competition">
+                <div class="card-body">
+                    <h5 class="card-title">BMW M4 Competition</h5>
+                    <p class="card-text">Ultimate performance sports car.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $320</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW M4 Competition" data-price="320">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-elements">
+        <i class="fas fa-car-side floating-car"></i>
+        <i class="fas fa-car-rear floating-car"></i>
+        <i class="fas fa-truck-monster floating-car"></i>
+        <i class="fas fa-truck-pickup floating-car"></i>
+    </div>
+
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+            <button class="scroll-arrow left-arrow">&larr;</button>
+            <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw-m5.jpg' %}" class="card-img-top" alt="BMW M5">
+                <div class="card-body">
+                    <h5 class="card-title"> BMW M5 </h5>
+                    <p class="card-text">Legendary high-performance sedan.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $340</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW M5" data-price="340">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_i4.jpg' %}" class="card-img-top" alt="BMW i4">
+                <div class="card-body">
+                    <h5 class="card-title">BMW i4</h5>
+                    <p class="card-text">All-electric Gran Coupe performance.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $230</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW i4" data-price="230">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_7_2022.jpg' %}" class="card-img-top" alt="BMW 7 Series 2022">
+                <div class="card-body">
+                    <h5 class="card-title">BMW 7 Series (2022)</h5>
+                    <p class="card-text">Reliable and efficient family car.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $270</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW 7 Series (2022)" data-price="270">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_i7_m70.jpg' %}" class="card-img-top" alt="BMW i7 M70">
+                <div class="card-body">
+                    <h5 class="card-title">BMW i7 M70</h5>
+                    <p class="card-text">The most powerful electric BMW.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $380</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW i7 M70" data-price="380">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_i7.jpg' %}" class="card-img-top" alt="BMW i7">
+                <div class="card-body">
+                    <h5 class="card-title">BMW i7</h5>
+                    <p class="card-text">Pure electric luxury sedan.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $360</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW i7" data-price="360">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/bmw/bmw_4_cabriolet.jpg' %}" class="card-img-top" alt="BMW 4 Cabriolet">
+                <div class="card-body">
+                    <h5 class="card-title">BMW 4 Cabriolet</h5>
+                    <p class="card-text">Open-top driving pleasure.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $240</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="BMW 4 Cabriolet" data-price="240">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5 class="modal-title" id="rentModalLabel">Rent a Car</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="rentForm" method="post" action="{% url 'ford_rental' %}">
+              {% csrf_token %}
+              <input type="hidden" name="car_model" id="carModelInput" />
+              <input type="hidden" name="price" id="priceInput" />
+
+              <div class="mb-3">
+                <label for="first_name" class="form-label">Your first name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" required />
+              </div>
+              <div class="mb-3">
+                <label for="last_name" class="form-label">Your last name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" required />
+              </div>
+              <div class="mb-3">
+                <label for="phone_number" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" name="phone_number" id="phone_number" pattern="[0-9+]{10,15}" placeholder="+380XXXXXXXXX" required />
+              </div>
+              <div class="mb-3">
+                <label for="rental_date" class="form-label">Rental Date</label>
+                <input type="date" class="form-control" name="rental_date" id="rental_date" required />
+              </div>
+              <div class="mb-3">
+                <label for="rental_duration" class="form-label">Rental Duration (days)</label>
+                <input type="number" class="form-control" name="rental_duration" id="rental_duration" min="1" required />
+              </div>
+              <div class="mb-3">
+                <label for="payment_method" class="form-label">Payment Method</label>
+               <select class="form-select" name="payment_method" id="payment_method" required>
+                  <option value="" disabled selected>Select payment method</option>
+                  <option value="cash">Cash</option>
+                  <option value="card">Card</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Submit Rental</button>
+            </form>
+
+            <div id="successMessage" class="alert alert-success text-center mt-3 d-none">
+                <h5>🎉 Rental Successful!</h5>
+                <p>Your rental has been recorded.</p>
+                <a href="{% url 'bmw' %}" class="btn btn-primary">Return to Cars</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+    <p class="text">
+          BMW isn’t just a car; it’s a way of life that inspires, excites, and captures the hearts of millions worldwide. Choosing BMW means embracing not just a vehicle but a masterpiece of engineering that embodies innovation, comfort, and the pure joy of driving.
+    </p>
+</div>
+
+
+ <footer class="footer text-light py-4">
+    <div class="container-fluid px-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+            <div class="mb-3 mb-md-0">
+                <h5 class="fw-bold">AutoGalaxy</h5>
+                <p class="mb-0">Your trusted car rental partner since 2018</p>
+            </div>
+
+            <div class="footer-links d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://t.me/yourusername" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/380000000000" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://maps.google.com/?q=Kyiv,+Ukraine" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-map-marker-alt"></i> Location
+                </a>
+                <a href="mailto:info@autogalaxy.com" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+380000000000" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-phone"></i> +380 00 000 00 00
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-3 border-top border-light pt-3 small">
+            © 2025 AutoGalaxy. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Скрол по кнопках
+    const leftArrows = document.querySelectorAll('.left-arrow');
+    const rightArrows = document.querySelectorAll('.right-arrow');
+    const scrollContainers = document.querySelectorAll('.scroll-container');
+    leftArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', () => {
+            scrollContainers[index].scrollBy({ left: -300, behavior: 'smooth' });
+        });
+    });
+    rightArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', () => {
+            scrollContainers[index].scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    });
+
+    // Відкриття сайдбару
+    const toggleButton = document.getElementById('toggleButton');
+    const sidebar = document.getElementById('sidebar');
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+
+    // Відкриття модального вікна з передачею даних
+    document.querySelectorAll('.rent-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const carModel = this.getAttribute('data-car');
+            const price = this.getAttribute('data-price');
+
+            document.getElementById('carModelInput').value = carModel;
+            document.getElementById('priceInput').value = price;
+
+            const modal = new bootstrap.Modal(document.getElementById('rentModal'));
+            modal.show();
+        });
+    });
+
+    // Відправка форми
+    const rentForm = document.getElementById('rentForm');
+    rentForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(rentForm);
+
+        fetch("{% url 'ford_rental' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                rentForm.classList.add('d-none');
+                document.getElementById('successMessage').classList.remove('d-none');
+            } else {
+                alert("Error: " + (data.error || "Something went wrong"));
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+</body>
+</html>

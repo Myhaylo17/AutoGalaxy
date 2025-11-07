@@ -1,0 +1,303 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ford</title>
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'neq/css/ford_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container my-5">
+
+    <h1 class="text-center mb-4">Ford: Power, Innovation, and Versatility</h1>
+
+     <div class="floating-elements">
+    <i class="fas fa-car-side floating-car"></i>
+    <i class="fas fa-car-rear floating-car"></i>
+    <i class="fas fa-truck-monster floating-car"></i>
+    <i class="fas fa-truck-pickup floating-car"></i>
+</div>
+
+
+    <!-- Кнопка меню -->
+    <button id="toggleButton" class="sidebar-toggle">☰ Information</button>
+
+    <!-- Sidebar меню -->
+    <div class="sidebar" id="sidebar">
+        <a href="{% url 'home' %}"><i class="fas fa-home"></i> Main page</a>
+        <a href="{% url 'bmw' %}"><i class="fas fa-car"></i> BMW</a>
+        <a href="{% url 'audi' %}"><i class="fas fa-car-side"></i> Audi</a>
+        <a href="{% url 'volswagen' %}"><i class="fas fa-car-alt"></i> Volkswagen</a>
+        <a href="{% url 'mercedes' %}"><i class="fas fa-taxi"></i> Mercedes</a>
+        <a href="{% url 'porsche' %}"><i class="fas fa-car-crash"></i> Porsche</a>
+        <a href="{% url 'ford' %}"><i class="fas fa-truck"></i> Ford</a>
+        <a href="{% url 'tesla' %}"><i class="fas fa-bolt"></i> Tesla</a>
+        <a href="{% url 'about_us' %}"><i class="fas fa-info-circle"></i> About Us</a>
+    </div>
+
+
+    <!-- Горизонтальний скрол -->
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+            <button class="scroll-arrow left-arrow" onclick="scrollLeft()">&larr;</button>
+            <button class="scroll-arrow right-arrow" onclick="scrollRight()">&rarr;</button>
+        </div>
+
+        <div class="scroll-container">
+            <!-- Машина 1 -->
+            <div class="card">
+                <img src="{% static 'neq/img/cars/ford/ford_kuga.jpg' %}" alt="Ford Kuga" />
+                <div class="card-body">
+                    <h5 class="card-title">Ford Kuga</h5>
+                    <p class="card-text">Luxury sedan with premium features.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $80</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Ford Kuga" data-price="80">Rent</button>
+                </div>
+            </div>
+            <!-- Машина 2 -->
+            <div class="card">
+                <img src="{% static 'neq/img/cars/ford/ford_puma.jpg' %}" alt="Ford Puma" />
+                <div class="card-body">
+                    <h5 class="card-title">Ford Puma</h5>
+                    <p class="card-text">Luxury sedan with premium features.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $65</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Ford Puma" data-price="65">Rent</button>
+                </div>
+            </div>
+            <!-- Машина 3 -->
+            <div class="card">
+                <img src="{% static 'neq/img/cars/ford/ford_focusjpg.jpg' %}" alt="Ford Focus" />
+                <div class="card-body">
+                    <h5 class="card-title">Ford Focus</h5>
+                    <p class="card-text">Reliable and efficient family car.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $50</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Ford Focus" data-price="50">Rent</button>
+                </div>
+            </div>
+            <!-- Машина 4 -->
+            <div class="card">
+                <img src="{% static 'neq/img/cars/ford/ford_mondeo.jpg' %}" alt="Ford Mondeo" />
+                <div class="card-body">
+                    <h5 class="card-title">Ford Mondeo</h5>
+                    <p class="card-text">Fully electric SUV with advanced features.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $55</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Ford Mondeo" data-price="55">Rent</button>
+                </div>
+            </div>
+            <!-- Додаткові машини -->
+            <div class="card">
+                <img src="{% static 'neq/img/cars/ford/ford_fusion.jpg' %}" alt="Ford Fusion" />
+                <div class="card-body">
+                    <h5 class="card-title">Ford Fusion</h5>
+                    <p class="card-text">Description for car 5.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $70</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Ford Fusion" data-price="70">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/ford/ford_ranger.jpg' %}" alt="Ford Ranger" />
+                <div class="card-body">
+                    <h5 class="card-title">Ford Ranger</h5>
+                    <p class="card-text">Description for car 6.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $120</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Ford Ranger" data-price="120">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentModalLabel">Rent a Car</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="rentForm" method="post" action="{% url 'ford_rental' %}">
+          {% csrf_token %}
+          <!-- Приховані поля для автомобіля та ціни -->
+          <input type="hidden" name="car_model" id="carModelInput" />
+          <input type="hidden" name="price" id="priceInput" />
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Your first name</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="name" class="form-label">Your last name</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" name="phone_number" id="phone_number" pattern="[0-9+]{10,15}" placeholder="+380XXXXXXXXX" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="rental_date" class="form-label">Rental Date</label>
+            <input type="date" class="form-control" name="rental_date" id="rental_date" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="rental_duration" class="form-label">Rental Duration (days)</label>
+            <input type="number" class="form-control" name="rental_duration" id="rental_duration" min="1" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="payment_method" class="form-label">Payment Method</label>
+           <select class="form-select" name="payment_method" id="payment_method" required>
+              <option value="" disabled selected>Select payment method</option>
+              <option value="cash">Cash</option>
+              <option value="card">Card</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Submit Rental</button>
+        </form>
+
+          <div id="successMessage" class="alert alert-success text-center mt-3 d-none">
+            <h5>🎉 Rental Successful!</h5>
+            <p>Your rental has been recorded.</p>
+            <a href="{% url 'ford' %}" class="btn btn-primary">Return to Cars</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br><br>
+
+ <p class="text">
+    Ford vehicles are built to meet every challenge,
+    offering reliable performance,
+    advanced features, and bold designs that stand out.
+</p>
+<p class="text">
+    Ford isn't just a car—it's a partner for your journey.
+</p>
+<p class="text">
+    Discover your perfect Ford today.
+    Book a test drive and experience its legendary quality firsthand!
+</p>
+
+<br></br>
+
+
+ <footer class="footer text-light py-4">
+    <div class="container-fluid px-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+            <div class="mb-3 mb-md-0">
+                <h5 class="fw-bold">AutoGalaxy</h5>
+                <p class="mb-0">Your trusted car rental partner since 2018</p>
+            </div>
+
+            <div class="footer-links d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://t.me/yourusername" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/380000000000" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://maps.google.com/?q=Kyiv,+Ukraine" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-map-marker-alt"></i> Location
+                </a>
+                <a href="mailto:info@autogalaxy.com" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+380000000000" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-phone"></i> +380 00 000 00 00
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-3 border-top border-light pt-3 small">
+            © 2025 AutoGalaxy. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Скрипти -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Скрол по кнопках
+    function scrollLeft() {
+        document.querySelector('.scroll-container').scrollBy({ left: -250, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+        document.querySelector('.scroll-container').scrollBy({ left: 250, behavior: 'smooth' });
+    }
+
+    // Відкриття сайдбару
+    const toggleButton = document.getElementById('toggleButton');
+    const sidebar = document.getElementById('sidebar');
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+
+    // Відкриття модального вікна з передачею даних
+    document.querySelectorAll('.rent-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const carModel = this.getAttribute('data-car');
+            const price = this.getAttribute('data-price');
+
+            // Встановлюємо значення у форму
+            document.getElementById('carModelInput').value = carModel;
+            document.getElementById('priceInput').value = price;
+
+            // Діагностика
+            console.log('Setting car:', carModel, 'price:', price);
+            console.log('Form values:', {
+                car_model: document.getElementById('carModelInput').value,
+                price: document.getElementById('priceInput').value
+            });
+
+            const modal = new bootstrap.Modal(document.getElementById('rentModal'));
+            modal.show();
+        });
+    });
+
+
+    const rentForm = document.getElementById('rentForm');
+rentForm.addEventListener('submit', function(event) {
+    event.preventDefault();  // скасовуємо стандартне перезавантаження
+
+    const formData = new FormData(rentForm);
+
+    fetch("{% url 'ford_rental' %}", {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.success) {
+            // Ховаємо форму
+            rentForm.classList.add('d-none');
+
+            // Показуємо повідомлення про успіх
+            const successDiv = document.getElementById('successMessage');
+            successDiv.classList.remove('d-none');
+        } else {
+            alert("Error: " + data.error);
+        }
+    })
+    .catch(error => console.error("Error:", error));
+});
+
+</script>
+
+</body>
+</html>

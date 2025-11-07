@@ -1,0 +1,386 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mercedes</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'neq/css/mercedes_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="container my-5">
+    <h1 class="text-center mb-4">Mercedes-Benz: Luxury, Reliability, and Style</h1>
+    <br><br>
+
+    <div class="floating-elements">
+        <i class="fas fa-car-side floating-car"></i>
+        <i class="fas fa-car-rear floating-car"></i>
+        <i class="fas fa-truck-monster floating-car"></i>
+        <i class="fas fa-truck-pickup floating-car"></i>
+    </div>
+
+    <button id="toggleButton" class="sidebar-toggle">☰ Information</button>
+
+    <div class="sidebar" id="sidebar">
+        <a href="{% url 'home' %}"><i class="fas fa-home"></i> Main page</a>
+        <a href="{% url 'bmw' %}"><i class="fas fa-car"></i> BMW</a>
+        <a href="{% url 'audi' %}"><i class="fas fa-car-side"></i> Audi</a>
+        <a href="{% url 'volswagen' %}"><i class="fas fa-car-alt"></i> Volkswagen</a>
+        <a href="{% url 'mercedes' %}"><i class="fas fa-taxi"></i> Mercedes</a>
+        <a href="{% url 'porsche' %}"><i class="fas fa-car-crash"></i> Porsche</a>
+        <a href="{% url 'ford' %}"><i class="fas fa-truck"></i> Ford</a>
+        <a href="{% url 'tesla' %}"><i class="fas fa-bolt"></i> Tesla</a>
+        <a href="{% url 'about_us' %}"><i class="fas fa-info-circle"></i> About Us</a>
+    </div>
+
+     <div class="scroll-wrapper">
+        <div class="arrows-container">
+           <button class="scroll-arrow left-arrow">&larr;</button>
+           <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_eqc.jpg' %}" class="card-img-top" alt="Mercedes EQC">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes EQC</h5>
+                    <p class="card-text">Luxury electric SUV with premium features.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $240</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes EQC" data-price="240">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_eqs_suvjpg.jpg' %}" class="card-img-top" alt="Mercedes EQS SUV">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes EQS SUV</h5>
+                    <p class="card-text">The pinnacle of electric luxury.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $320</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes EQS SUV" data-price="320">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_gt_4door_coupe.jpg' %}" class="card-img-top" alt="Mercedes GT 4-Door Coupe">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes GT 4-Door</h5>
+                    <p class="card-text">High-performance sports coupe.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $350</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes GT 4-Door" data-price="350">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_eclass.jpg' %}" class="card-img-top" alt="Mercedes E-class">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes E-class</h5>
+                    <p class="card-text">Iconic executive sedan with advanced tech.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $200</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes E-class" data-price="200">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_eqe.jpg' %}" class="card-img-top" alt="Mercedes EQE">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes EQE</h5>
+                    <p class="card-text">Futuristic electric business sedan.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $260</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes EQE" data-price="260">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_eqv.jpg' %}" class="card-img-top" alt="Mercedes EQV">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes EQV</h5>
+                    <p class="card-text">Spacious and luxurious electric van.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $180</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes EQV" data-price="180">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-wrapper">
+        <div class="arrows-container">
+            <button class="scroll-arrow left-arrow">&larr;</button>
+            <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mersedes_maybach_sclass.jpg' %}" class="card-img-top" alt="Mercedes-Maybach S-class">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes-Maybach S-class</h5>
+                    <p class="card-text">Ultimate luxury and sophistication.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $500</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes-Maybach S-class" data-price="500">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_eclass_estate.jpg' %}" class="card-img-top" alt="Mercedes E-class Estate">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes E-class Estate</h5>
+                    <p class="card-text">Spacious, practical, and luxurious wagon.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $210</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes E-class Estate" data-price="210">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_vclass.jpg' %}" class="card-img-top" alt="Mercedes V-class">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes V-class</h5>
+                    <p class="card-text">Reliable and efficient family van.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $170</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes V-class" data-price="170">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_cle_coupe.jpg' %}" class="card-img-top" alt="Mercedes CLE Coupe">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes CLE Coupe</h5>
+                    <p class="card-text">Sporty elegance and modern comfort.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $230</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes CLE Coupe" data-price="230">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_glcclass_coupe.jpg' %}" class="card-img-top" alt="Mercedes GLC Coupe">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes GLC Coupe</h5>
+                    <p class="card-text">Dynamic SUV with a stylish silhouette.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $220</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes GLC Coupe" data-price="220">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_eclass_estate.jpg' %}" class="card-img-top" alt="Mercedes E-class Estate">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes E-class Estate</h5>
+                    <p class="card-text">Description for car 6.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $210</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes E-class Estate" data-price="210">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="scroll-wrapper">
+        <div class="arrows-container">
+            <button class="scroll-arrow left-arrow">&larr;</button>
+            <button class="scroll-arrow right-arrow">&rarr;</button>
+        </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_vclass_marcopolo.jpg' %}" class="card-img-top" alt="Mercedes V-class Marco Polo">
+                <div class="card-body">
+                    <h5 class="card-title"> Mercedes V-class Marco Polo </h5>
+                    <p class="card-text">Your luxury home on wheels.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $250</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes V-class Marco Polo" data-price="250">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_sl_roadster.jpg' %}" class="card-img-top" alt="Mercedes SL Roadster">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes SL Roadster</h5>
+                    <p class="card-text">Iconic convertible sports car.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $360</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes SL Roadster" data-price="360">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_cclass.jpg' %}" class="card-img-top" alt="Mercedes C-class">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes C-class</h5>
+                    <p class="card-text">Compact luxury sedan with style.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $180</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes C-class" data-price="180">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_gt_coupe.jpg' %}" class="card-img-top" alt="Mercedes-AMG GT Coupe">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes-AMG GT Coupe</h5>
+                    <p class="card-text">Pure performance and racing DNA.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $400</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes-AMG GT Coupe" data-price="400">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_amg_glc.jpg' %}" class="card-img-top" alt="Mercedes-AMG GLC">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes-AMG GLC</h5>
+                    <p class="card-text">High-performance mid-size SUV.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $280</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes-AMG GLC" data-price="280">Rent</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'neq/img/cars/mercedes/mercedes_aclass_sedan.jpg' %}" class="card-img-top" alt="Mercedes A-class Sedan">
+                <div class="card-body">
+                    <h5 class="card-title">Mercedes A-class Sedan</h5>
+                    <p class="card-text">Compact, stylish, and technologically advanced.</p>
+                    <p class="card-text"><strong>Price for day:</strong> $160</p>
+                    <button type="button" class="btn btn-primary rent-button" data-car="Mercedes A-class Sedan" data-price="160">Rent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <p class = "text">Every Mercedes-Benz is more than a car; it’s a masterpiece of engineering that combines cutting-edge technology, premium quality, and unmatched comfort.</p>
+    <p class = "text">Mercedes-Benz isn’t just a car; it’s a symbol of success and confidence. Don’t wait—join the Mercedes-Benz family today. Book a test drive and discover the car of your dreams!</p>
+    <br><br>
+</div>
+
+<div class="modal fade" id="rentModal" tabindex="-1" aria-labelledby="rentModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rentModalLabel">Rent a Car</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="rentForm" method="post" action="{% url 'ford_rental' %}">
+          {% csrf_token %}
+          <input type="hidden" name="car_model" id="carModelInput" />
+          <input type="hidden" name="price" id="priceInput" />
+
+          <div class="mb-3">
+            <label for="first_name" class="form-label">Your first name</label>
+            <input type="text" class="form-control" name="first_name" id="first_name" required />
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Your last name</label>
+            <input type="text" class="form-control" name="last_name" id="last_name" required />
+          </div>
+          <div class="mb-3">
+            <label for="phone_number" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" name="phone_number" id="phone_number" pattern="[0-9+]{10,15}" placeholder="+380XXXXXXXXX" required />
+          </div>
+          <div class="mb-3">
+            <label for="rental_date" class="form-label">Rental Date</label>
+            <input type="date" class="form-control" name="rental_date" id="rental_date" required />
+          </div>
+          <div class="mb-3">
+            <label for="rental_duration" class="form-label">Rental Duration (days)</label>
+            <input type="number" class="form-control" name="rental_duration" id="rental_duration" min="1" required />
+          </div>
+          <div class="mb-3">
+            <label for="payment_method" class="form-label">Payment Method</label>
+            <select class="form-select" name="payment_method" id="payment_method" required>
+              <option value="" disabled selected>Select payment method</option>
+              <option value="cash">Cash</option>
+              <option value="card">Card</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit Rental</button>
+        </form>
+
+        <div id="successMessage" class="alert alert-success text-center mt-3 d-none">
+            <h5>🎉 Rental Successful!</h5>
+            <p>Your rental has been recorded.</p>
+            <a href="{% url 'mercedes' %}" class="btn btn-primary">Return to Cars</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <footer class="footer text-light py-4">
+    <div class="container-fluid px-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start">
+            <div class="mb-3 mb-md-0">
+                <h5 class="fw-bold">AutoGalaxy</h5>
+                <p class="mb-0">Your trusted car rental partner since 2018</p>
+            </div>
+
+            <div class="footer-links d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://t.me/yourusername" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+                <a href="https://wa.me/380000000000" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://maps.google.com/?q=Kyiv,+Ukraine" target="_blank" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-map-marker-alt"></i> Location
+                </a>
+                <a href="mailto:info@autogalaxy.com" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="tel:+380000000000" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-phone"></i> +380 00 000 00 00
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center mt-3 border-top border-light pt-3 small">
+            © 2025 AutoGalaxy. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Логіка для сайдбару та скролів
+    const toggleButton = document.getElementById('toggleButton');
+    const sidebar = document.getElementById('sidebar');
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+    const leftArrows = document.querySelectorAll('.left-arrow');
+    const rightArrows = document.querySelectorAll('.right-arrow');
+    const scrollContainers = document.querySelectorAll('.scroll-container');
+    leftArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', () => {
+            scrollContainers[index].scrollBy({ left: -300, behavior: 'smooth' });
+        });
+    });
+    rightArrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', () => {
+            scrollContainers[index].scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    });
+
+    // Логіка для модального вікна
+    document.querySelectorAll('.rent-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const carModel = this.getAttribute('data-car');
+            const price = this.getAttribute('data-price');
+
+            document.getElementById('carModelInput').value = carModel;
+            document.getElementById('priceInput').value = price;
+
+            const modal = new bootstrap.Modal(document.getElementById('rentModal'));
+            modal.show();
+        });
+    });
+
+    // Логіка для відправки форми (AJAX)
+    const rentForm = document.getElementById('rentForm');
+    rentForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(rentForm);
+
+        fetch("{% url 'ford_rental' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken')
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                rentForm.classList.add('d-none');
+                document.getElementById('successMessage').classList.remove('d-none');
+            } else {
+                alert("Error: " + (data.error || "Something went wrong."));
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    });
+</script>
+
+</body>
+</html>
